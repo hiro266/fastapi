@@ -47,6 +47,17 @@ def create_item(item: Item):
     print(f"実務ではデータベースに保存処理を書く: {item.name}, {item.price}, {item.description}")
     return item
 
+class ContactForm(BaseModel):
+    name: str
+    email: str
+    message: str
+
+@app.post("/contact-form/")
+def create_contactForm(contactForm: ContactForm):
+    # 下記出力はAPI側で確認するためのもの
+    print(f"実務ではデータベースに保存処理を書く: {contactForm.name}, {contactForm.email}, {contactForm.message}")
+    return contactForm
+
 # -------------------------------------------------------------
 # Header
 
